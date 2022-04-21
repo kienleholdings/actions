@@ -1,0 +1,43 @@
+name: 'Repo Copy'
+description: 'Push files and folders from one repo to another'
+inputs:
+  commit_message:
+    description: 'A message to include with the commit'
+    required: false
+  destination_branch:
+    description: 'The branch on the destination to push the files to, defaults to "main"'
+    required: false
+  destination_folder:
+    description: 'The name of the directory in the destination repository to copy the files to (will be created if it does not exist)'
+    required: false
+  destination_name:
+    description: 'The name of the destination repository to copy the files to'
+    required: true
+  files:
+    description: 'Files and folders to copy from the original repository (separated by a space)'
+    required: true
+  user_email:
+    description: 'Email for the git commit'
+    required: true
+  user_token:
+    description: 'GitHun token for pulling and pushing the destination repository'
+    required: true
+  user_username:
+    description: 'GitHub username for the commit'
+    required: true
+  
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.commit-message }}
+    - ${{ inputs.destination-branch }}
+    - ${{ inputs.destination-folder }}
+    - ${{ inputs.destination-name }}
+    - ${{ inputs.files }}
+    - ${{ inputs.user-email }}
+    - ${{ inputs.user-token }}
+    - ${{ inputs.user-username }}
+branding:
+  icon: 'copy'
+  color: 'green'
