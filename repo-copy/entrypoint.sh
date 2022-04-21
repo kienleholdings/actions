@@ -36,17 +36,16 @@ echo "::group::Cloning Public Repository"
 echo "✅ Repo Cloned"
 echo "::endgroup::"
 
-echo "::group::Ensuring Packages Directory Exists"
+echo "::group::Ensuring Destination Directory Exists"
 echo "Note: This is only required for first-time use"
 mkdir -p "$TEMP_DIR/$INPUT_DESTINATION_FOLDER"
-echo "Packages Directory Verified"
+echo "Destination Directory Verified"
 echo "::endgroup::"
 
-echo "::group::Copying Public Packages to Temp Folder"
-cd packages
-PACKAGES_TO_COPY="eslint-config-base eslint-config-react mdlint prettierrc pubman tsconfigs"
-cp -R $PACKAGES_TO_COPY ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER/
-echo "✅ Packages Copied to ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER"
+echo "::group::Copying Public Destination to Temp Folder"
+FILES_TO_COPY="eslint-config-base eslint-config-react mdlint prettierrc pubman tsconfigs"
+cp -r $FILES_TO_COPY ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER/
+echo "✅ Files Copied to ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER"
 echo "::endgroup::"
 
 echo "::group::Ensure Directory is Safe"
