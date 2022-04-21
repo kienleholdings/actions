@@ -43,17 +43,17 @@ echo "Destination Directory Verified"
 echo "::endgroup::"
 
 echo "::group::Copying Public Destination to Temp Folder"
-cp -r $INPUT_FILES ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER/
-echo "✅ Files Copied to ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER"
+cp -r $INPUT_FILES $TEMP_DIR/$INPUT_DESTINATION_FOLDER/
+echo "✅ Files Copied to $TEMP_DIR/$INPUT_DESTINATION_FOLDER"
 echo "::endgroup::"
 
 echo "::group::Ensure Directory is Safe"
-git config --global --add safe.directory "../$TEMP_DIR"
+git config --global --add safe.directory "$TEMP_DIR"
 echo "✅ Temp Directory is Safe"
 echo "::endgroup::"
 
 echo "::group::Checking In Files"
-cd "../$TEMP_DIR"
+cd "$TEMP_DIR"
 git add .
 echo "✅ Files Checked In"
 echo "::endgroup::"
