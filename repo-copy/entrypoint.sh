@@ -43,8 +43,7 @@ echo "Destination Directory Verified"
 echo "::endgroup::"
 
 echo "::group::Copying Public Destination to Temp Folder"
-FILES_TO_COPY="eslint-config-base eslint-config-react mdlint prettierrc pubman tsconfigs"
-cp -r $FILES_TO_COPY ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER/
+cp -r $INPUT_FILES ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER/
 echo "✅ Files Copied to ../$TEMP_DIR/$INPUT_DESTINATION_FOLDER"
 echo "::endgroup::"
 
