@@ -1,2 +1,3 @@
-# actions
-A Collection of Useful GitHub Actions
+# Actions
+
+🎬  A Collection of Useful GitHub Actions

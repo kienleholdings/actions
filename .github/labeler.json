@@ -1,0 +1,8 @@
+{
+  "labels": {
+    "Action: repo-copy": ["repo-copy/**"],
+    "Configuration: CI": [".github/workflows/**"],
+    "Configuration: Github": [".github/**", "!.github/workflows/*", ".gitignore"],
+    "Documentation": ["README.md", "docs/**"]
+  }
+}
